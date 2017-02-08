@@ -1,0 +1,34 @@
+package a9ae0b01f0ffc.commons.main
+
+import a9ae0b01f0ffc.commons.static_string.T_static_string_builder
+
+import java.lang.management.ManagementFactory
+
+class T_const {
+
+    static final T_const GC_CONST = new T_const()
+    static final Object GC_NULL_OBJ_REF = null
+    static final String GC_EMPTY_STRING = ""
+    static final String GC_AT_CHAR = "@"
+    static final String GC_COMMA = ","
+    static final String GC_COLON = ":"
+    static final Integer GC_EMPTY_SIZE = 0
+    static final Integer GC_FIRST_INDEX = 0
+    static final Integer GC_FIRST_CHAR = 0
+    static final String GC_NEW_LINE = System.lineSeparator()
+    static final String GC_PATH_SEPARATOR = File.separator
+    static final String GC_POINT = "."
+    static final Integer GC_ONE_CHAR = 1
+    static final Boolean GC_TRUE = true
+    static final Boolean GC_FALSE = false
+    static final Integer GC_ZERO = 0
+    static final Boolean GC_FILE_APPEND_YES = GC_TRUE
+    static final String GC_USERNAME = System.getProperty("user.name")
+    static final String GC_THREADID = Long.toString(Thread.currentThread().getId())
+    static final String GC_PROCESSID = ManagementFactory.getRuntimeMXBean().getName().substring(GC_FIRST_CHAR, ManagementFactory.getRuntimeMXBean().getName().indexOf(GC_AT_CHAR))//When Java 9 comes: ProcessHandle.current().getPid()
+    static final T_static_string_builder GC_STATIC_STRING_BUILDER = new T_static_string_builder()
+    static final String GC_FALSE_STRING = "false"
+    static final String GC_TRUE_STRING = "true"
+    static final String GC_SPACE = " "
+
+}
