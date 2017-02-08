@@ -11,7 +11,7 @@ class T_conf {
     private static final Boolean LC_ALLOW_CHANGES_AFTER_INIT_YES = T_const.GC_TRUE
     private ExpandoMetaClass p_expando_meta_class = new ExpandoMetaClass(T_conf, LC_REGISTER_NO, LC_ALLOW_CHANGES_AFTER_INIT_YES)
     private Boolean p_is_init = init()
-    private GPathResult p_gpathresult = T_const.GC_NULL_OBJ_REF
+    private GPathResult p_gpathresult = T_const.GC_NULL_OBJ_REF as GPathResult
     private HashMap<String, String> p_values_by_name = new HashMap<String, String>()
     private HashMap<String, String> p_names_by_value = new HashMap<String, String>()
 
