@@ -7,7 +7,8 @@ import java.lang.management.ManagementFactory
 class T_const {
 
     static final T_const GC_CONST = new T_const()
-    static final Object GC_NULL_OBJ_REF = null
+    static final Object GC_NULL_OBJ_REF = null as Object
+    static final Collection<Object> GC_SKIPPED_ARGS = new ArrayList<Object>()
     static final String GC_EMPTY_STRING = ""
     static final String GC_AT_CHAR = "@"
     static final String GC_COMMA = ","
@@ -30,5 +31,6 @@ class T_const {
     static final String GC_FALSE_STRING = "false"
     static final String GC_TRUE_STRING = "true"
     static final String GC_SPACE = " "
+    static final Integer GC_FULL_BYTE = 0x00FF
 
 }

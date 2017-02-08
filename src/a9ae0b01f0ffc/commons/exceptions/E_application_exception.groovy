@@ -1,16 +1,16 @@
 package a9ae0b01f0ffc.commons.exceptions
 
+import a9ae0b01f0ffc.commons.main.T_const
+import a9ae0b01f0ffc.commons.main.T_u
 import a9ae0b01f0ffc.commons.static_string.T_static_string
-import groovy.transform.CompileStatic
 import org.codehaus.groovy.runtime.StackTraceUtils
 
-@CompileStatic
 class E_application_exception extends Exception {
 
     private static final String PC_MESSAGE_FORMAT_TOKEN_TRACE = "Z"
     private static final String PC_MESSAGE_FORMAT_TOKEN_SPACE = "_"
-    private static Boolean p_is_tokenization_enabled = "true"
-    ArrayList<Object> p_traces = null
+    private static Boolean p_is_tokenization_enabled = T_const.GC_TRUE
+    private ArrayList<Object> p_traces = new ArrayList<Object>()
 
     static Boolean is_tokenization_enabled() {
         return p_is_tokenization_enabled
@@ -20,33 +20,20 @@ class E_application_exception extends Exception {
         p_is_tokenization_enabled = i_is_tokenization_enabled
     }
 
-    static String tokenize(T_static_string i_msg_text, Object... i_traces = null) {
-        Integer l_trace_seqno = 0
-        String l_exception_text = i_msg_text.toString()
-        if (p_is_tokenization_enabled) {
-            l_exception_text = l_exception_text.replace(PC_MESSAGE_FORMAT_TOKEN_SPACE, " ")
-            for (Object l_runtime_trace in i_traces) {
-                l_trace_seqno++
-                l_exception_text = l_exception_text.replace(PC_MESSAGE_FORMAT_TOKEN_TRACE + l_trace_seqno.toString(), l_runtime_trace.toString())
-            }
-        }
-        return l_exception_text
-    }
-
-    E_application_exception(T_static_string i_msg_text, Object... i_traces = null) {
-        super(tokenize(i_msg_text, i_traces))
-        if (i_traces != null) {
+    E_application_exception(T_static_string i_msg_text, Object... i_traces = T_const.GC_SKIPPED_ARGS as Object[]) {
+        super(is_tokenization_enabled() ? T_u.tokenize(i_msg_text, PC_MESSAGE_FORMAT_TOKEN_SPACE, PC_MESSAGE_FORMAT_TOKEN_TRACE, i_traces) : i_msg_text.toString())
+        if (T_u.method_arguments_present(i_traces)) {
             p_traces = new ArrayList<Object>(Arrays.asList(i_traces))
         }
     }
 
     @Override
     String toString() {
-        String l_exception_text = ""
+        String l_exception_text = T_const.GC_EMPTY_STRING
         Throwable sanitizedThrowable
         sanitizedThrowable = new StackTraceUtils().sanitizeRootCause(this)
-        l_exception_text += this.getClass().getName() + "," + this.getMessage() + System.lineSeparator()
-        l_exception_text += Arrays.toString(sanitizedThrowable.getStackTrace()).replace(",", System.lineSeparator() + "at")
+        l_exception_text += this.getClass().getName() + T_const.GC_COMMA + this.getMessage() + System.lineSeparator()
+        l_exception_text += Arrays.toString(sanitizedThrowable.getStackTrace()).replace(T_const.GC_COMMA, System.lineSeparator() + T_const.GC_AT_CHAR)
         return l_exception_text
     }
 

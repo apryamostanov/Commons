@@ -39,37 +39,37 @@ class T_tests_commons {
     }
 
     @Test
-    void conf_005() {
+    void conf_001() {
         assert new T_conf(PC_WORKING_DIR + "sample_config_with_any_name.conf").test_parameter321 == "test_val123"
     }
 
     @Test
-    void conf_006() {
+    void conf_002() {
         assert new T_conf(PC_WORKING_DIR + "sample_config_with_any_name.conf").GC_TEST_PARAMETER321 == "test_val123"
     }
 
     @Test
-    void conf_007() {
+    void conf_003() {
         assert new T_conf(PC_WORKING_DIR + "sample_config_with_any_name.conf").override("test_parameter321", "1234") == "test_val123"
     }
 
     @Test
-    void conf_008() {
+    void conf_004() {
         assert new T_conf(PC_WORKING_DIR + "sample_config_with_any_name.conf").override("test_parameter3210", "1234") == "1234"
     }
 
     @Test
-    void conf_009() {
+    void conf_005() {
         assert new T_conf(PC_WORKING_DIR + "sample_config_with_any_name.conf").test_parameter321("1234") == "test_val123"
     }
 
     @Test
-    void conf_010() {
+    void conf_006() {
         assert new T_conf(PC_WORKING_DIR + "sample_config_with_any_name.conf").test_parameter3210("1234") == "1234"
     }
 
     @Test
-    void ioc_011() {
+    void ioc_001() {
         T_class_loader l_class_loader = new T_class_loader(PC_WORKING_DIR + "sample_class.conf")
         I_sample l_sample = l_class_loader.instantiate("I_sample")
         assert l_sample.do_something() == "zz"

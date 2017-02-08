@@ -1,7 +1,9 @@
 package a9ae0b01f0ffc.commons.main
 
 import a9ae0b01f0ffc.commons.config_helper.T_conf
+import groovy.transform.PackageScope
 
+@PackageScope
 class T_commons {
 
     static T_conf GC_CONST_CONF = T_const.GC_NULL_OBJ_REF as T_conf
