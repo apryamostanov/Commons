@@ -26,7 +26,7 @@ class T_conf {
     }
 
     String methodMissing(String i_method_name, args) {
-        return override(i_method_name, args[0])
+        return override(i_method_name, args[T_const.GC_FIRST_INDEX])
     }
 
     T_conf(String i_conf_file_name) {
