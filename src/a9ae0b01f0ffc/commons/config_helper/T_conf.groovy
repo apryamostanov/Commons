@@ -1,6 +1,7 @@
 package a9ae0b01f0ffc.commons.config_helper
 
 import a9ae0b01f0ffc.commons.exceptions.E_application_exception
+import a9ae0b01f0ffc.commons.main.T_const
 import a9ae0b01f0ffc.commons.static_string.T_static_string_builder
 import groovy.util.slurpersupport.GPathResult
 
@@ -21,7 +22,7 @@ class T_conf {
     }
 
     final String propertyMissing(String i_parameter_name) {
-        return override(i_parameter_name, "")
+        return override(i_parameter_name, T_const.GC_EMPTY_STRING)
     }
 
     String methodMissing(String i_method_name, args) {
@@ -45,12 +46,13 @@ class T_conf {
         if (p_values_by_name.containsKey(i_parameter_name)) {
             p_values_by_name.get(i_parameter_name)
         } else {
-            return ""
+            return T_const.GC_EMPTY_STRING
         }
     }
 
     String override(String i_parameter_name, String i_default_value) {
-        String l_parameter_name = i_parameter_name.replace("GC_", "").toLowerCase()
+        final String LC_CONSTANT_PREFIX = "GC_"
+        String l_parameter_name = i_parameter_name.replace(LC_CONSTANT_PREFIX, T_const.GC_EMPTY_STRING).toLowerCase()
         if (p_values_by_name.containsKey(l_parameter_name)) {
             return get_value_by_name(l_parameter_name)
         } else {
@@ -62,7 +64,7 @@ class T_conf {
         if (p_names_by_value.containsKey(i_parameter_value)) {
             p_names_by_value.get(i_parameter_value)
         } else {
-            return ""
+            return T_const.GC_EMPTY_STRING
         }
     }
 
