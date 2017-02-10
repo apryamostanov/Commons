@@ -9,6 +9,10 @@ final class T_common_context {
         p_context_thread_local.set(new T_common_context())
     }
 
+    void init_custom(String i_commons_conf_file_name) {
+        p_context_thread_local.get().p_commons = new T_common_commons(i_commons_conf_file_name)
+    }
+
     T_common_commons get_commons() {
         return ((T_common_context) p_context_thread_local.get()).p_commons
     }

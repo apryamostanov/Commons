@@ -2,7 +2,7 @@ package com.a9ae0b01f0ffc.commons.main
 
 import com.a9ae0b01f0ffc.commons.config_helper.T_conf
 
-abstract class T_common_commons {
+class T_common_commons {
 
     T_conf GC_CONST_CONF = T_common_const.GC_NULL_OBJ_REF as T_conf
     String GC_DATETIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm:ss:SSS"

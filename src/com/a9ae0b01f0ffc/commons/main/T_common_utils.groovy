@@ -38,7 +38,7 @@ abstract class T_common_utils {
         final String LC_YYYY = "yyyy"
         final String LC_YY = "yy"
         String l_format = i_format
-        String l_date = T_common_shortcuts.nvl(i_date, new Date())
+        String l_date = nvl(i_date, new Date())
         Date l_result_date
         if (l_format.toLowerCase().indexOf(LC_YYYY) == LC_NOT_EXISTS) {
             l_format += LC_YYYY
@@ -93,13 +93,16 @@ abstract class T_common_utils {
     }
 
     static final Object coalesce(Object... i_objects = T_common_const.GC_SKIPPED_ARGS) {
+        Object l_last_object = T_common_const.GC_NULL_OBJ_REF
         if (method_arguments_present(i_objects)) {
             for (Object l_object : i_objects) {
                 if (l_object != T_common_const.GC_NULL_OBJ_REF && l_object != T_common_const.GC_EMPTY_STRING) {
                     return l_object
+                } else {
+                    l_last_object = l_object
                 }
             }
-            return T_common_const.GC_NULL_OBJ_REF
+            return l_last_object
         } else {
             return T_common_const.GC_NULL_OBJ_REF
         }
