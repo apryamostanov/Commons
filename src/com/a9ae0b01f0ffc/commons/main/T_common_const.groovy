@@ -1,12 +1,11 @@
-package a9ae0b01f0ffc.commons.main
+package com.a9ae0b01f0ffc.commons.main
 
-import a9ae0b01f0ffc.commons.static_string.T_static_string_builder
+import com.a9ae0b01f0ffc.commons.static_string.T_static_string_builder
 
 import java.lang.management.ManagementFactory
 
-class T_const {
+abstract class T_common_const {
 
-    static final T_const GC_CONST = new T_const()
     static final Object GC_NULL_OBJ_REF = null as Object
     static final Collection<Object> GC_SKIPPED_ARGS = new ArrayList<Object>()
     static final String GC_EMPTY_STRING = ""

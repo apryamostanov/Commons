@@ -1,14 +1,14 @@
-package a9ae0b01f0ffc.commons.ioc
+package com.a9ae0b01f0ffc.commons.ioc
 
-import a9ae0b01f0ffc.commons.config_helper.T_conf
-import a9ae0b01f0ffc.commons.exceptions.E_application_exception
-import a9ae0b01f0ffc.commons.main.T_const
-import a9ae0b01f0ffc.commons.static_string.T_static_string_builder
+import com.a9ae0b01f0ffc.commons.config_helper.T_conf
+import com.a9ae0b01f0ffc.commons.exceptions.E_application_exception
+import com.a9ae0b01f0ffc.commons.main.T_common_const
+import com.a9ae0b01f0ffc.commons.static_string.T_static_string_builder
 
 final class T_class_loader {
 
-    private String p_class_loader_conf_file_name = T_const.GC_EMPTY_STRING
-    private T_conf p_conf = T_const.GC_NULL_OBJ_REF as T_conf
+    private String p_class_loader_conf_file_name = T_common_const.GC_EMPTY_STRING
+    private T_conf p_conf = T_common_const.GC_NULL_OBJ_REF as T_conf
 
     T_class_loader(String i_class_loader_conf_file_name) {
         p_class_loader_conf_file_name = i_class_loader_conf_file_name
@@ -28,7 +28,7 @@ final class T_class_loader {
 
     String get_class_name(String i_interface_name) {
         String l_class_name = p_conf.get_value_by_name(i_interface_name)
-        if (l_class_name == T_const.GC_EMPTY_STRING) {
+        if (l_class_name == T_common_const.GC_EMPTY_STRING) {
             l_class_name = i_interface_name
         }
         return l_class_name

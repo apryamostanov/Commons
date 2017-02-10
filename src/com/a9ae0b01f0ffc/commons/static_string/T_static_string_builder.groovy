@@ -1,4 +1,4 @@
-package a9ae0b01f0ffc.commons.static_string
+package com.a9ae0b01f0ffc.commons.static_string
 
 final class T_static_string_builder {
 

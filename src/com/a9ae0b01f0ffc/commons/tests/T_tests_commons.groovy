@@ -1,17 +1,17 @@
-package a9ae0b01f0ffc.commons.tests
+package com.a9ae0b01f0ffc.commons.tests
 
-import a9ae0b01f0ffc.commons.config_helper.T_conf
-import a9ae0b01f0ffc.commons.exceptions.E_application_exception
-import a9ae0b01f0ffc.commons.ioc.T_class_loader
-import a9ae0b01f0ffc.commons.static_string.T_static_string_builder
-import a9ae0b01f0ffc.commons.tests.data.I_sample
+import com.a9ae0b01f0ffc.commons.config_helper.T_conf
+import com.a9ae0b01f0ffc.commons.exceptions.E_application_exception
+import com.a9ae0b01f0ffc.commons.ioc.T_class_loader
+import com.a9ae0b01f0ffc.commons.static_string.T_static_string_builder
+import com.a9ae0b01f0ffc.commons.tests.data.I_sample
 import org.junit.Test
 
 /**/
 
 class T_tests_commons {
 
-    private static final String PC_WORKING_DIR = "./src/a9ae0b01f0ffc/commons/tests/data/"
+    private static final String PC_WORKING_DIR = "./src/com/a9ae0b01f0ffc/commons/tests/data/"
 
     @Test
     void application_exception_001() {
