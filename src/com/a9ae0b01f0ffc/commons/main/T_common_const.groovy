@@ -19,6 +19,7 @@ abstract class T_common_const {
     static final String GC_PATH_SEPARATOR = File.separator
     static final String GC_POINT = "."
     static final Integer GC_ONE_CHAR = 1
+    static final Integer GC_ONE_ONLY = 1
     static final Boolean GC_TRUE = true
     static final Boolean GC_FALSE = false
     static final Integer GC_ZERO = 0

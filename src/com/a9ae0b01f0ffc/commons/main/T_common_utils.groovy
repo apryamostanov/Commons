@@ -118,5 +118,14 @@ abstract class T_common_utils {
         return l_result_object
     }
 
+    static final String get_short_name(String i_class_name) {
+        String l_short_name = T_common_const.GC_EMPTY_STRING
+        if (i_class_name.contains(T_common_const.GC_POINT)) {
+            l_short_name = i_class_name.substring(i_class_name.lastIndexOf(T_common_const.GC_POINT) + T_common_const.GC_ONE_CHAR)
+        } else {
+            l_short_name = i_class_name
+        }
+        return l_short_name
+    }
 
 }
