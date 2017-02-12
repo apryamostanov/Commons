@@ -17,6 +17,7 @@ class T_common_commons {
     String GC_SUBST_TIME = "%TIME%"
     String GC_SUBST_THREADID = "%THREADID%"
     String GC_SUBST_PROCESSID = "%PROCESSID%"
+    String GC_THREADID = Long.toString(Thread.currentThread().getId())
 
     T_common_commons(String i_conf_file_name) {
         GC_CONST_CONF = new T_conf(i_conf_file_name)

@@ -25,7 +25,6 @@ abstract class T_common_const {
     static final Integer GC_ZERO = 0
     static final Boolean GC_FILE_APPEND_YES = GC_TRUE
     static final String GC_USERNAME = System.getProperty("user.name")
-    static final String GC_THREADID = Long.toString(Thread.currentThread().getId())
     static final String GC_PROCESSID = ManagementFactory.getRuntimeMXBean().getName().substring(GC_FIRST_CHAR, ManagementFactory.getRuntimeMXBean().getName().indexOf(GC_AT_CHAR))//When Java 9 comes: ProcessHandle.current().getPid()
     static final T_static_string_builder GC_STATIC_STRING_BUILDER = new T_static_string_builder()
     static final String GC_FALSE_STRING = "false"
