@@ -31,5 +31,14 @@ abstract class T_common_const {
     static final String GC_TRUE_STRING = "true"
     static final String GC_SPACE = " "
     static final Integer GC_FULL_BYTE = 0x00FF
+    static final String GC_XML_LESS = "<"
+    static final String GC_XML_GREATER = ">"
+    static final String GC_XML_QUOTE = "'"
+    static final String GC_XML_DOUBLE_QUOTE = "\""
+    static final String GC_XML_AMP = "&"
+    static final String GC_XML_CDATA_OPEN = "<![CDATA["
+    static final String GC_XML_CDATA_CLOSE = "]]>"
+    static final Integer GC_HTTP_RESP_CODE_OK = 200
+    static final String GC_UNDERSCORE = "_"
 
 }

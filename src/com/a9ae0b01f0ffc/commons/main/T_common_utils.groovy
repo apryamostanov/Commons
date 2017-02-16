@@ -56,21 +56,22 @@ abstract class T_common_utils {
         return l_result_date
     }
 
-    static final String process_location(String i_location) {
+    static final String process_location(String i_location, T_common_commons i_commons) {
         Date l_current_date = new Date()
         String l_location = i_location
-        l_location = l_location.replaceAll(T_common_shortcuts.commons().GC_SUBST_USERNAME, T_common_const.GC_USERNAME)
-        l_location = l_location.replaceAll(T_common_shortcuts.commons().GC_SUBST_DATE, l_current_date.format(T_common_shortcuts.commons().GC_FILENAME_DATE_FORMAT))
-        l_location = l_location.replaceAll(T_common_shortcuts.commons().GC_SUBST_TIME, l_current_date.format(T_common_shortcuts.commons().GC_FILENAME_TIME_FORMAT))
-        l_location = l_location.replaceAll(T_common_shortcuts.commons().GC_SUBST_THREADID, T_common_const.GC_THREADID)
-        l_location = l_location.replaceAll(T_common_shortcuts.commons().GC_SUBST_PROCESSID, T_common_const.GC_PROCESSID)
+        l_location = l_location.replaceAll(i_commons.GC_SUBST_USERNAME, T_common_const.GC_USERNAME)
+        l_location = l_location.replaceAll(i_commons.GC_SUBST_DATE, l_current_date.format(i_commons.GC_FILENAME_DATE_FORMAT))
+        l_location = l_location.replaceAll(i_commons.GC_SUBST_TIME, l_current_date.format(i_commons.GC_FILENAME_TIME_FORMAT))
+        l_location = l_location.replaceAll(i_commons.GC_SUBST_THREADID, i_commons.GC_THREADID)
+        l_location = l_location.replaceAll(i_commons.GC_SUBST_THREADNAME, i_commons.GC_THREADNAME)
+        l_location = l_location.replaceAll(i_commons.GC_SUBST_PROCESSID, T_common_const.GC_PROCESSID)
         return l_location
     }
 
     static final FileWriter init_file(String i_location) {
         File l_file = T_common_const.GC_NULL_OBJ_REF as File
         FileWriter l_file_writer = T_common_const.GC_NULL_OBJ_REF as FileWriter
-        String l_location = process_location(i_location)
+        String l_location = process_location(i_location, T_common_shortcuts.commons())
         l_file = new File(l_location)
         l_file.getParentFile().mkdirs()
         l_file_writer = new FileWriter(l_file, T_common_const.GC_FILE_APPEND_YES)
@@ -126,6 +127,10 @@ abstract class T_common_utils {
             l_short_name = i_class_name
         }
         return l_short_name
+    }
+
+    static Boolean method_arguments_exist(Object[] i_traces) {
+        return (i_traces != T_common_const.GC_SKIPPED_ARGS && i_traces != T_common_const.GC_NULL_OBJ_REF && i_traces.size() > T_common_const.GC_EMPTY_SIZE)
     }
 
 }
