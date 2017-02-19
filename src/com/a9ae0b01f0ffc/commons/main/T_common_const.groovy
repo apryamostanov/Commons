@@ -36,9 +36,11 @@ abstract class T_common_const {
     static final String GC_XML_QUOTE = "'"
     static final String GC_XML_DOUBLE_QUOTE = "\""
     static final String GC_XML_AMP = "&"
+    static final String GC_XML_END = "/"
     static final String GC_XML_CDATA_OPEN = "<![CDATA["
     static final String GC_XML_CDATA_CLOSE = "]]>"
     static final Integer GC_HTTP_RESP_CODE_OK = 200
     static final String GC_UNDERSCORE = "_"
+    static final String GC_EQUALS = "="
 
 }
