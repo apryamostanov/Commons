@@ -7,8 +7,14 @@ import com.a9ae0b01f0ffc.commons.static_string.T_static_string_builder
 
 final class T_class_loader {
 
+    private static String PC_ZERO_CONF_NAME = "zero_configuration"
     private String p_class_loader_conf_file_name = T_common_const.GC_EMPTY_STRING
     private T_conf p_conf = T_common_const.GC_NULL_OBJ_REF as T_conf
+
+    T_class_loader(T_conf i_conf) {
+        p_class_loader_conf_file_name = PC_ZERO_CONF_NAME
+        p_conf = i_conf
+    }
 
     T_class_loader(String i_class_loader_conf_file_name) {
         p_class_loader_conf_file_name = i_class_loader_conf_file_name

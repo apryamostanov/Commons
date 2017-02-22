@@ -21,6 +21,10 @@ class T_common_commons {
     String GC_THREADID = Long.toString(Thread.currentThread().getId())
     String GC_THREADNAME = Thread.currentThread().getName()
 
+    T_common_commons() {
+        
+    }
+
     T_common_commons(String i_conf_file_name) {
         GC_CONST_CONF = new T_conf(i_conf_file_name)
         GC_DATETIMESTAMP_FORMAT = GC_CONST_CONF.GC_LOG_DATETIMESTAMP_FORMAT(GC_DATETIMESTAMP_FORMAT)

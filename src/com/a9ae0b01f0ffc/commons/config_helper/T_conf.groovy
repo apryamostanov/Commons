@@ -11,14 +11,18 @@ class T_conf {
     private static final Boolean LC_ALLOW_CHANGES_AFTER_INIT_YES = T_common_const.GC_TRUE
     private ExpandoMetaClass p_expando_meta_class = new ExpandoMetaClass(T_conf, LC_REGISTER_NO, LC_ALLOW_CHANGES_AFTER_INIT_YES)
     private Boolean p_is_init = init()
-    private GPathResult p_gpathresult = T_common_const.GC_NULL_OBJ_REF as GPathResult
-    private HashMap<String, String> p_values_by_name = new HashMap<String, String>()
-    private HashMap<String, String> p_names_by_value = new HashMap<String, String>()
+    protected GPathResult p_gpathresult = T_common_const.GC_NULL_OBJ_REF as GPathResult
+    protected HashMap<String, String> p_values_by_name = new HashMap<String, String>()
+    protected HashMap<String, String> p_names_by_value = new HashMap<String, String>()
 
     Boolean init() {
         p_expando_meta_class.initialize()
         this.setMetaClass(p_expando_meta_class)
         return true
+    }
+
+    T_conf() {
+
     }
 
     final String propertyMissing(String i_parameter_name) {
@@ -52,7 +56,12 @@ class T_conf {
 
     String override(String i_parameter_name, String i_default_value) {
         final String LC_CONSTANT_PREFIX = "GC_"
-        String l_parameter_name = i_parameter_name.replace(LC_CONSTANT_PREFIX, T_common_const.GC_EMPTY_STRING).toLowerCase()
+        String l_parameter_name
+        if (i_parameter_name.contains(LC_CONSTANT_PREFIX)) {
+            l_parameter_name = i_parameter_name.replace(LC_CONSTANT_PREFIX, T_common_const.GC_EMPTY_STRING).toLowerCase()
+        } else {
+            l_parameter_name = i_parameter_name
+        }
         if (p_values_by_name.containsKey(l_parameter_name)) {
             return get_value_by_name(l_parameter_name)
         } else {
