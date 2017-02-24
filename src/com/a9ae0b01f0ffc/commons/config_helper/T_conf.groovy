@@ -21,6 +21,14 @@ class T_conf {
         return true
     }
 
+    T_conf(GPathResult i_conf) {
+        p_gpathresult = i_conf
+        for (l_child_node in i_conf.children()) {
+            p_values_by_name.put(l_child_node.name(), l_child_node.@value.text())
+            p_names_by_value.put(l_child_node.@value.text(), l_child_node.name())
+        }
+    }
+
     T_conf() {
 
     }

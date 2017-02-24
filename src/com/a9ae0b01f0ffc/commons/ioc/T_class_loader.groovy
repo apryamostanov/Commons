@@ -4,6 +4,7 @@ import com.a9ae0b01f0ffc.commons.config_helper.T_conf
 import com.a9ae0b01f0ffc.commons.exceptions.E_application_exception
 import com.a9ae0b01f0ffc.commons.main.T_common_const
 import com.a9ae0b01f0ffc.commons.static_string.T_static_string_builder
+import groovy.util.slurpersupport.GPathResult
 
 final class T_class_loader {
 
@@ -14,6 +15,11 @@ final class T_class_loader {
     T_class_loader(T_conf i_conf) {
         p_class_loader_conf_file_name = PC_ZERO_CONF_NAME
         p_conf = i_conf
+    }
+
+    T_class_loader(GPathResult i_conf) {
+        p_class_loader_conf_file_name = PC_ZERO_CONF_NAME
+        p_conf = new T_conf(i_conf)
     }
 
     T_class_loader(String i_class_loader_conf_file_name) {
