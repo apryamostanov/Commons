@@ -1,6 +1,6 @@
-package com.a9ae0b01f0ffc.commons.static_string
+package com.a9ae0b01f0ffc.commons.implementation.static_string
 
-final class T_static_string_builder {
+class T_static_string_builder {
 
     private static final Boolean LC_REGISTER_NO = false
     private static final Boolean LC_ALLOW_CHANGES_AFTER_INIT_YES = true

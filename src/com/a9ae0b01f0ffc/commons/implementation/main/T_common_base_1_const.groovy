@@ -1,11 +1,12 @@
-package com.a9ae0b01f0ffc.commons.main
+package com.a9ae0b01f0ffc.commons.implementation.main
 
-import com.a9ae0b01f0ffc.commons.static_string.T_static_string_builder
+import com.a9ae0b01f0ffc.commons.implementation.static_string.T_static_string_builder
 
 import java.lang.management.ManagementFactory
 
-abstract class T_common_const {
+abstract class T_common_base_1_const extends T_common_base_0_uid{
 
+    static final T_static_string_builder s = new T_static_string_builder()
     static final Object GC_NULL_OBJ_REF = null as Object
     static final Collection<Object> GC_SKIPPED_ARGS = new ArrayList<Object>()
     static final String GC_EMPTY_STRING = ""
@@ -14,6 +15,7 @@ abstract class T_common_const {
     static final String GC_COLON = ":"
     static final Integer GC_EMPTY_SIZE = 0
     static final Integer GC_FIRST_INDEX = 0
+    static final Integer GC_SECOND_INDEX = 1
     static final Integer GC_FIRST_CHAR = 0
     static final String GC_NEW_LINE = System.lineSeparator()
     static final String GC_PATH_SEPARATOR = File.separator
@@ -26,7 +28,6 @@ abstract class T_common_const {
     static final Boolean GC_FILE_APPEND_YES = GC_TRUE
     static final String GC_USERNAME = System.getProperty("user.name")
     static final String GC_PROCESSID = ManagementFactory.getRuntimeMXBean().getName().substring(GC_FIRST_CHAR, ManagementFactory.getRuntimeMXBean().getName().indexOf(GC_AT_CHAR))//When Java 9 comes: ProcessHandle.current().getPid()
-    static final T_static_string_builder GC_STATIC_STRING_BUILDER = new T_static_string_builder()
     static final String GC_FALSE_STRING = "false"
     static final String GC_TRUE_STRING = "true"
     static final String GC_SPACE = " "
@@ -42,5 +43,8 @@ abstract class T_common_const {
     static final Integer GC_HTTP_RESP_CODE_OK = 200
     static final String GC_UNDERSCORE = "_"
     static final String GC_EQUALS = "="
+    static final Integer GC_TWO_BYTES = 2
+    static final String PC_YYYY = "yyyy"
+    static final String PC_YY = "yy"
 
 }

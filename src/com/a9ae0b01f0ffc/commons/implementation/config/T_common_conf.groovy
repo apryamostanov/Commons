@@ -1,14 +1,14 @@
-package com.a9ae0b01f0ffc.commons.main
+package com.a9ae0b01f0ffc.commons.implementation.config
 
-import com.a9ae0b01f0ffc.commons.config_helper.T_conf
+import com.a9ae0b01f0ffc.commons.implementation.main.T_common_base_1_const
 
-class T_common_commons {
+class T_common_conf {
 
-    T_conf GC_CONST_CONF = T_common_const.GC_NULL_OBJ_REF as T_conf
+    T_conf_accessor GC_CONST_CONF = T_common_base_1_const.GC_NULL_OBJ_REF as T_conf_accessor
     String GC_DATETIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm:ss:SSS"
     String GC_FILENAME_DATE_FORMAT = "yyyyMMdd"
     String GC_FILENAME_TIME_FORMAT = "HHmmssSSS"
-    String GC_CLASS_LOADER_CONF_FILE_NAME = T_common_const.GC_EMPTY_STRING
+    String GC_CLASS_LOADER_CONF_FILE_NAME = T_common_base_1_const.GC_EMPTY_STRING
     String GC_MESSAGE_FORMAT_TOKEN_SEPARATOR_BEFORE = "_"
     String GC_MESSAGE_FORMAT_TOKEN_SEPARATOR_AFTER = " "
     String GC_MESSAGE_FORMAT_TOKEN_TRACE = "Z"
@@ -21,12 +21,12 @@ class T_common_commons {
     String GC_THREADID = Long.toString(Thread.currentThread().getId())
     String GC_THREADNAME = Thread.currentThread().getName()
 
-    T_common_commons() {
-        
+    T_common_conf() {
+
     }
 
-    T_common_commons(String i_conf_file_name) {
-        GC_CONST_CONF = new T_conf(i_conf_file_name)
+    T_common_conf(String i_conf_file_name) {
+        GC_CONST_CONF = new T_conf_accessor(i_conf_file_name)
         GC_DATETIMESTAMP_FORMAT = GC_CONST_CONF.GC_LOG_DATETIMESTAMP_FORMAT(GC_DATETIMESTAMP_FORMAT)
         GC_FILENAME_DATE_FORMAT = GC_CONST_CONF.GC_LOG_FILENAME_DATE_FORMAT(GC_FILENAME_DATE_FORMAT)
         GC_FILENAME_TIME_FORMAT = GC_CONST_CONF.GC_LOG_FILENAME_TIME_FORMAT(GC_FILENAME_TIME_FORMAT)
