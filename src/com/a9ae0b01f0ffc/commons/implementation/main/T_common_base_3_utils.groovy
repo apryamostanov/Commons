@@ -32,18 +32,16 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
 
     static
     final String tokenize(T_static_string i_msg_text, String i_token_space, String i_token_trace, List<Object> i_traces = GC_SKIPPED_ARGS) {
+        Integer l_trace_seqno = GC_ZERO
+        String l_text = i_msg_text.toString()
+        l_text = l_text.replace(i_token_space, GC_SPACE)
         if (method_arguments_present(i_traces)) {
-            Integer l_trace_seqno = GC_ZERO
-            String l_text = i_msg_text.toString()
-            l_text = l_text.replace(i_token_space, GC_SPACE)
             for (Object l_runtime_trace in i_traces) {
                 l_trace_seqno++
                 l_text = l_text.replace(i_token_trace + l_trace_seqno.toString(), l_runtime_trace.toString())
             }
-            return l_text
-        } else {
-            return i_msg_text.toString()
         }
+        return l_text
     }
 
     static final String d2s(Date i_date, String i_format) {
