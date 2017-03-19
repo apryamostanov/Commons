@@ -10,6 +10,11 @@ class E_application_exception extends Exception {
     private static final String PC_MESSAGE_FORMAT_TOKEN_TRACE = "Z"
     private static final String PC_MESSAGE_FORMAT_TOKEN_SPACE = "_"
     private ArrayList<Object> p_traces = new ArrayList<Object>()
+    String p_guid = UUID.randomUUID()
+
+    String get_guid() {
+        return p_guid
+    }
 
     E_application_exception(T_static_string i_msg_text, Object... i_traces = T_common_base_1_const.GC_SKIPPED_ARGS as Object[]) {
         super(T_common_base_3_utils.tokenize(i_msg_text, PC_MESSAGE_FORMAT_TOKEN_SPACE, PC_MESSAGE_FORMAT_TOKEN_TRACE, Arrays.asList(i_traces)))
