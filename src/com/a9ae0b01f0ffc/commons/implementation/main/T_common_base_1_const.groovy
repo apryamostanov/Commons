@@ -22,6 +22,8 @@ abstract class T_common_base_1_const extends T_common_base_0_uid{
     public static final String GC_POINT = "."
     public static final Integer GC_ONE_CHAR = 1
     public static final Integer GC_ONE_ONLY = 1
+    public static final Integer GC_TWO_ONLY = 2
+    public static final Integer GC_CHAR_INDEX_NOT_EXISTING = -1
     public static final Boolean GC_TRUE = true
     public static final Boolean GC_FALSE = false
     public static final Integer GC_ZERO = 0
@@ -46,5 +48,7 @@ abstract class T_common_base_1_const extends T_common_base_0_uid{
     public static final Integer GC_TWO_BYTES = 2
     public static final String PC_YYYY = "yyyy"
     public static final String PC_YY = "yy"
+    public static final String GC_BRACKET_OPEN = "("
+    public static final String GC_BRACKET_CLOSE = ")"
 
 }

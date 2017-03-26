@@ -30,6 +30,10 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
         }
     }
 
+    static final Boolean not(Boolean i_boolean_to_invert) {
+        return !i_boolean_to_invert
+    }
+
     static
     final String tokenize(T_static_string i_msg_text, String i_token_space, String i_token_trace, List<Object> i_traces = GC_SKIPPED_ARGS) {
         Integer l_trace_seqno = GC_ZERO
