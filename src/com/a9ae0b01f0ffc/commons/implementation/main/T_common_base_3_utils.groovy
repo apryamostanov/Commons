@@ -144,6 +144,9 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
 
     static final String get_short_name(String i_class_name) {
         String l_short_name = GC_EMPTY_STRING
+        if (is_null(i_class_name)) {
+            return i_class_name
+        }
         if (i_class_name.contains(GC_POINT)) {
             l_short_name = i_class_name.substring(i_class_name.lastIndexOf(GC_POINT) + GC_ONE_CHAR)
         } else {
