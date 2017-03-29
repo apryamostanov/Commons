@@ -1,6 +1,8 @@
 package com.a9ae0b01f0ffc.commons.implementation.main
 
 import com.a9ae0b01f0ffc.commons.implementation.config.T_common_conf
+import com.a9ae0b01f0ffc.commons.implementation.dictionaries.T_dic_country
+import com.a9ae0b01f0ffc.commons.implementation.dictionaries.T_dic_currency
 import com.a9ae0b01f0ffc.commons.implementation.exceptions.E_application_exception
 import com.a9ae0b01f0ffc.commons.implementation.static_string.T_static_string
 
@@ -142,6 +144,34 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
         return l_result_object
     }
 
+    static final String country_digits(String i_country_chars) {
+        return T_dic_country.GC_123_BY_ABC.get(i_country_chars)
+    }
+
+    static final String country_chars(String i_country_digits) {
+        return T_dic_country.GC_ABC_BY_123.get(i_country_digits)
+    }
+
+    static final String currency_digits(String i_country_chars) {
+        return T_dic_currency.GC_123_BY_ABC.get(i_country_chars)
+    }
+
+    static final String last_chars(String i_string, Integer i_how_much_chars) {
+        if (is_null(i_string)) {
+            return GC_EMPTY_STRING
+        }
+        Integer l_last_position = i_string.length() - i_how_much_chars
+        if (l_last_position <= GC_ZERO) {
+            return i_string
+        } else {
+            return i_string.substring(l_last_position)
+        }
+    }
+
+    static final String currency_chars(String i_country_digits) {
+        return T_dic_currency.GC_ABC_BY_123.get(i_country_digits)
+    }
+
     static final String get_short_name(String i_class_name) {
         String l_short_name = GC_EMPTY_STRING
         if (is_null(i_class_name)) {
@@ -165,6 +195,14 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
 
     static Boolean is_not_null(Object i_object) {
         return !is_null(i_object)
+    }
+
+    static HashMap invert_hashmap(HashMap i_hash_map) {
+        HashMap l_inverted_hash_map = new HashMap()
+        for (Map.Entry l_entry : i_hash_map.entrySet()) {
+            l_inverted_hash_map.put(l_entry.getValue(), l_entry.getKey())
+        }
+        return l_inverted_hash_map
     }
 
 }

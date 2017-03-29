@@ -101,4 +101,15 @@ class T_tests_commons {
         assert T_common_base_3_utils.method_arguments_present(l_array)
     }
 
+    @Test
+    void util_04() {
+        System.out.println(T_common_base_3_utils.currency_digits("SGD"))
+    }
+
+    @Test
+    void util_05() {
+        System.out.println(T_common_base_3_utils.last_chars("123", 4))
+    }
+
+
 }

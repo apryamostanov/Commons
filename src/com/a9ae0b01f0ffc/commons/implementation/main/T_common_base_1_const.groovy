@@ -50,5 +50,8 @@ abstract class T_common_base_1_const extends T_common_base_0_uid{
     public static final String PC_YY = "yy"
     public static final String GC_BRACKET_OPEN = "("
     public static final String GC_BRACKET_CLOSE = ")"
+    public static final Integer GC_THREE_CHARS = 3
+    public static final Integer GC_FOUR_CHARS = 4
+    public static final String GC_ZERO_CHAR = "0"
 
 }
