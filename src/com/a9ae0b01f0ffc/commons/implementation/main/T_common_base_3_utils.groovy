@@ -168,6 +168,10 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
         }
     }
 
+    static final String substr(String i_string, Integer i_start, Integer i_end) {
+        return i_string.substring(i_start, Math.min(i_string.length(), i_end))
+    }
+
     static final String currency_chars(String i_country_digits) {
         return T_dic_currency.GC_ABC_BY_123.get(i_country_digits)
     }
