@@ -5,6 +5,7 @@ import com.a9ae0b01f0ffc.commons.implementation.dictionaries.T_dic_country
 import com.a9ae0b01f0ffc.commons.implementation.dictionaries.T_dic_currency
 import com.a9ae0b01f0ffc.commons.implementation.exceptions.E_application_exception
 import com.a9ae0b01f0ffc.commons.implementation.static_string.T_static_string
+import groovy.text.SimpleTemplateEngine
 
 import java.text.SimpleDateFormat
 
@@ -81,15 +82,15 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
         return l_result_date
     }
 
-    static final String process_location(String i_location, T_common_conf i_commons) {
+    static String process_location(String i_location, T_common_conf i_commons) {
         Date l_current_date = new Date()
         String l_location = i_location
-        l_location = l_location.replaceAll(i_commons.GC_SUBST_USERNAME, GC_USERNAME)
-        l_location = l_location.replaceAll(i_commons.GC_SUBST_DATE, l_current_date.format(i_commons.GC_FILENAME_DATE_FORMAT))
-        l_location = l_location.replaceAll(i_commons.GC_SUBST_TIME, l_current_date.format(i_commons.GC_FILENAME_TIME_FORMAT))
-        l_location = l_location.replaceAll(i_commons.GC_SUBST_THREADID, i_commons.GC_THREADID)
-        l_location = l_location.replaceAll(i_commons.GC_SUBST_THREADNAME, i_commons.GC_THREADNAME)
-        l_location = l_location.replaceAll(i_commons.GC_SUBST_PROCESSID, GC_PROCESSID)
+        l_location = l_location.replace(i_commons.GC_SUBST_USERNAME, GC_USERNAME)
+        l_location = l_location.replace(i_commons.GC_SUBST_DATE, l_current_date.format(i_commons.GC_FILENAME_DATE_FORMAT))
+        l_location = l_location.replace(i_commons.GC_SUBST_TIME, l_current_date.format(i_commons.GC_FILENAME_TIME_FORMAT))
+        l_location = l_location.replace(i_commons.GC_SUBST_THREADID, i_commons.GC_THREADID)
+        l_location = l_location.replace(i_commons.GC_SUBST_THREADNAME, i_commons.GC_THREADNAME)
+        l_location = l_location.replace(i_commons.GC_SUBST_PROCESSID, GC_PROCESSID)
         return l_location
     }
 
