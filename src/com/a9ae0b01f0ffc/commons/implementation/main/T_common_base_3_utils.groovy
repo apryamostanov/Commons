@@ -64,7 +64,7 @@ abstract class T_common_base_3_utils extends T_common_base_2_context {
     static final Date s2d(String i_date, String i_format) {
         final Integer LC_NOT_EXISTS = -1
         String l_format = i_format
-        String l_date = nvl(i_date, new Date())
+        String l_date = nvl(i_date, new Date().format(i_format))
         Date l_result_date
         if (l_format.toLowerCase().indexOf(PC_YYYY) == LC_NOT_EXISTS) {
             l_format += PC_YYYY
