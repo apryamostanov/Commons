@@ -18,6 +18,7 @@ class T_common_conf {
     String GC_SUBST_THREADID = "%THREADID%"
     String GC_SUBST_PROCESSID = "%PROCESSID%"
     String GC_SUBST_THREADNAME = "%THREADNAME%"
+    String GC_SUBST_DYNAMIC = "%DYNAMIC%"
     String GC_THREADID = Long.toString(Thread.currentThread().getId())
     String GC_THREADNAME = Thread.currentThread().getName()
 
