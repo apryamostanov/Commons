@@ -11,6 +11,12 @@ import java.text.SimpleDateFormat
 
 abstract class T_common_base_3_utils extends T_common_base_2_context {
 
+    static void set_property(String i_property_name, String i_property_value) {
+        if (is_not_null(i_property_value)) {
+            System.setProperty(i_property_name, i_property_value)
+        }
+    }
+
     static final Boolean method_arguments_present(Object i_args) {
         if (i_args != GC_SKIPPED_ARGS && i_args != GC_NULL_OBJ_REF) {
             if (i_args instanceof Collection) {
